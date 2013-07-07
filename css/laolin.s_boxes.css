@@ -1,0 +1,96 @@
+  div.s_boxes {
+    float: left;
+    width: 100%;
+    padding-left: 10px; }
+    div.s_boxes ul li {
+      display: block;
+      float: left;
+      list-style: none;
+      padding: 0;
+      margin: 0 15px 15px 0;
+      position: relative;
+      overflow: hidden;}
+      
+      div.s_boxes ul li a {
+        border-radius: 15px;
+        border: 1px solid #ddd;}
+      div.s_boxes ul li a.active-yes {
+        border: 1px solid #e00;}
+      div.s_boxes ul li h3 {
+        line-height:25px;
+        position: absolute;
+        color: #ff0;
+        font-size: 18px;
+        text-shadow: black 0.1em 0.1em 0.2em;
+        text-transform: uppercase; }
+      div.s_boxes ul li p {
+        position: absolute;
+        padding: 10px;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: left;
+        color: #444;
+        background-color: #ddd;
+        font-family: Helvetica; 
+        }
+        
+        
+    div.s_boxes-100 ul li {
+      width: 100px;
+      height: 100px; }
+    div.s_boxes-100 ul li a{
+      display: block;
+      height: 98px; }
+    div.s_boxes-100 ul li a.active-yes{
+      height: 98px; }
+      div.s_boxes-100 ul li img {
+        width: 98px;}
+      div.s_boxes-100 ul li h3 {
+        top: 10px;
+        left: 10px;}
+      div.s_boxes-100 ul li p {
+        top: 100px;
+        height: 100px;
+        width: 90px;
+        }
+        
+    div.s_boxes-150 ul li {
+      width: 150px;
+      height: 150px; }
+    div.s_boxes-150 ul li a{
+      display: block;
+      height: 148px; }
+    div.s_boxes-150 ul li a.active-yes{
+      height: 148px; }
+      div.s_boxes-150 ul li img {
+        width: 148px;}
+      div.s_boxes-150 ul li h3 {
+        top: 30px;
+        left: 30px;}
+      div.s_boxes-150 ul li p {
+        top: 150px;
+        height: 150px;
+        width: 140px;
+        }
+        
+    div.s_boxes-200 ul li {
+      width: 200px;
+      height: 200px; }
+    div.s_boxes-200 ul li a{
+      display: block;
+      height: 198px; }
+    div.s_boxes-200 ul li a.active-yes{
+      height: 198px; }
+      div.s_boxes-200 ul li img {
+        width: 198px;}
+      div.s_boxes-200 ul li h3 {
+        top: 50px;
+        left: 50px;}
+      div.s_boxes-200 ul li p {
+        top: 200px;
+        height: 200px;
+        width: 190px;
+        }
+        
+        .navbar-inner a.active-yes {
+        border: 1px solid #f0d;}

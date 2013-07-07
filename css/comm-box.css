@@ -1,0 +1,16 @@
+  .comm-box {
+    background-color:#fff;
+    padding:0 10px;
+    margin:0 20px 10px;
+  }
+    div.comm-box h3{
+      padding:5px 10px 0;
+      background-color:#f1f1f1;
+      border-bottom:3px solid #88f;
+    
+    }
+    div.comm-box p{
+      padding:5px 10px 0;
+      font-size:1.5em;
+      line-height:1.35;
+    }
