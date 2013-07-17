@@ -47,7 +47,7 @@ b.metbox {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 0.2s;
   float: left;
-  text-align: left;
+  text-align: center;
   padding: 10px 15px 5px 15px;
   opacity: 0.75;
   background-color: #2e8bcc;
