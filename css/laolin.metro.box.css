@@ -42,7 +42,7 @@ div.metbox-row  > b{
 }
 b.metbox {
   display: block;
-  cursor: pointer;
+  /*cursor: pointer;*/
   -webkit-perspective: 0;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 0.2s;
