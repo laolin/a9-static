@@ -16,25 +16,25 @@ div.metbox-row  > b{
 
 @media (min-width: 768px) {
   div.metbox-row-s1 > b{
-    height: 140px;
+    height: 90px;
   }
   div.metbox-row-s2 > b{
-    height: 290px;
+    height: 190px;
   }
   div.metbox-row-s3 > b{
-    height: 440px;
+    height: 290px;
   }
   div.metbox-row-s4 > b{
-    height: 590px;
+    height: 390px;
   }
   div.metbox-row-s5 > b{
-    height: 740px;
+    height: 490px;
   }
   div.metbox-row-s6 > b{
-    height: 890px;
+    height: 590px;
   }
   div.metbox-row-s7 > b{
-    height: 1040px;
+    height: 690px;
   }
 }
 @media (max-width: 767px) {
@@ -48,7 +48,7 @@ b.metbox {
   -webkit-transition: -webkit-transform 0.2s;
   float: left;
   text-align: center;
-  padding: 10px 15px 5px 15px;
+  padding: 10px 25px 5px 25px;
   opacity: 0.75;
   background-color: #2e8bcc;
   margin: 0 0 10px 0 ;
@@ -99,7 +99,7 @@ b.metbox-black {
 div.metbox-row > b h2 {
   font-size:1.5em;
   line-height:1.03em;
-  padding:0px;
+  padding:5px;
   text-align: center;
 }
 
@@ -120,10 +120,15 @@ div.metbox-row > b.metbox-yellow p {
 
 div.metbox-row > b a ,
 div.metbox-row > b a:active {
-  color: #3f3;
+  color: #6f6;
   text-decoration: none;
 }
-
+div.metbox-row > b.metbox-white a, 
+div.metbox-row > b.metbox-white a:active, 
+div.metbox-row > b.metbox-yellow a, 
+div.metbox-row > b.metbox-yellow a:active {
+  color: #505;
+}
 div.metbox-row > b a:hover {
   text-decoration: underline;
 }
