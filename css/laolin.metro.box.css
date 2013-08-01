@@ -1,13 +1,23 @@
 /* metro风格css，基于bootstrap，
  * Laolin 2003.6
  *****************************/
-@media (min-width: 768px) {
+ 
+@media  (min-width: 992px){
   div.mat-container{
     margin-top: -50px;
     margin-left: -150px;
     margin-right: -150px;
     padding:100px 180px 60px 180px;
-    background-color:#025;
+    background-color:#303;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px){
+  div.mat-container{
+    margin-top: -50px;
+    margin-left: -150px;
+    margin-right: -150px;
+    padding:50px 150px 10px 150px;
+    background-color:#303;
   }
 }
 @media (max-width: 767px) {
@@ -15,8 +25,8 @@
     margin-top: -50px;
     margin-left: -150px;
     margin-right: -150px;
-    padding:60px 150px 10px 150px;
-    background-color:#025;
+    padding:100px 150px 10px 150px;
+    background-color:#303;
   }
 
 }
@@ -72,7 +82,7 @@ b.metbox {
   float: left;
   text-align: center;
   padding: 10px 25px 5px 25px;
-  opacity: 0.75;
+  opacity: 0.85;
   background-color: #2e8bcc;
   margin: 10px;
   width:100%;
