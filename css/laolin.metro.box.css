@@ -1,40 +1,23 @@
 /* metro风格css，基于bootstrap，
  * Laolin 2003.6
  *****************************/
- 
 @media  (min-width: 992px){
-  div.mat-container{
-    margin-top: -50px;
-    margin-left: -150px;
-    margin-right: -150px;
-    padding:100px 180px 60px 180px;
-    background-color:#303;
-  }
+
 }
 @media (max-width: 991px) and (min-width: 768px){
-  div.mat-container{
-    margin-top: -50px;
-    margin-left: -150px;
-    margin-right: -150px;
-    padding:50px 150px 10px 150px;
-    background-color:#303;
-  }
+
 }
 @media (max-width: 767px) {
-  div.mat-container{
-    margin-top: -50px;
-    margin-left: -150px;
-    margin-right: -15px;
-    padding:50px 20px 10px 145px;
-    background-color:#303;
-  }
   b.metbox {
-    margin: 10px;
+    margin: 10px 0;
   }
 }
  
 
 @media (min-width: 768px) {
+  b.metbox {
+    margin: 10px;
+  }
   div.metbox-row-s1 > span{
     height: 100px;
   }
@@ -55,9 +38,6 @@
   }
   div.metbox-row-s7 > span{
     height: 700px;
-  }
-  b.metbox {
-    margin: 10px;
   }
 }
 
@@ -86,7 +66,7 @@ b.metbox {
   text-align: center;
   opacity: 0.85;
   background-color: #2e8bcc;
-  padding: 10px 25px 5px 25px;
+  padding: 10px 25px 15px 25px;
   width:100%;
   height:100%;
   overflow:hidden;
