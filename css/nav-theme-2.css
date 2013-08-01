@@ -20,12 +20,13 @@
 }
 .bs-docs-nav .navbar-nav > li > a:hover {
   color: #fff;
+  border-bottom:4px solid #1ff;
   background-color: #2e8bcc;
 }
 .bs-docs-nav .navbar-nav > .active > a,
 .bs-docs-nav .navbar-nav > .active > a:hover {
   color: #1ff;
-  background-color: #2e8bcc
+  border-bottom:4px solid #e00;
 }
 .bs-docs-nav .navbar-toggle {
   border-color: #563d7c;
