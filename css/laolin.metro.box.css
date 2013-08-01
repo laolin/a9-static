@@ -24,30 +24,17 @@
   div.mat-container{
     margin-top: -50px;
     margin-left: -150px;
-    margin-right: -150px;
-    padding:100px 150px 10px 150px;
+    margin-right: -10px;
+    padding:100px 20px 10px 145px;
     background-color:#303;
   }
-
+  b.metbox {
+    margin: 10px;
+  }
 }
-
-div.metbox-row {
-  margin: 0 0 0px 0;
-  padding:0;
-  overflow:hidden;
-}
-
-div.metbox-row  > span{
-  font-weight:normal;
-  overflow:hidden;
-}
-  
+ 
 
 @media (min-width: 768px) {
-  div.metbox-row  > span[class^="col-"]{
-    margin:0;
-    padding:0;
-  }
   div.metbox-row-s1 > span{
     height: 100px;
   }
@@ -69,9 +56,25 @@ div.metbox-row  > span{
   div.metbox-row-s7 > span{
     height: 700px;
   }
+  b.metbox {
+    margin: 10px;
+  }
 }
-@media (max-width: 767px) {
 
+div.metbox-row {
+  margin: 0 0 0px 0;
+  padding:0;
+  overflow:hidden;
+}
+
+div.metbox-row  > span[class^="col-"]{
+  margin:0;
+  padding:0;
+}
+
+div.metbox-row  > span{
+  font-weight:normal;
+  overflow:hidden;
 }
 b.metbox {
   display: block;
@@ -81,10 +84,9 @@ b.metbox {
   -webkit-transition: -webkit-transform 0.2s;
   float: left;
   text-align: center;
-  padding: 10px 25px 5px 25px;
   opacity: 0.85;
   background-color: #2e8bcc;
-  margin: 10px;
+  padding: 10px 25px 5px 25px;
   width:100%;
   height:100%;
   overflow:hidden;
