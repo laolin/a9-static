@@ -35,3 +35,8 @@
   background-color: #463265;
   border-color: #463265;
 }
+/* side nav*/
+.sidebar-nav{
+  background-color: #ddd;
+  padding: 20px 5px;
+}
