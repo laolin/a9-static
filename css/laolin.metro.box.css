@@ -1,6 +1,25 @@
 /* metro风格css，基于bootstrap，
  * Laolin 2003.6
  *****************************/
+@media (min-width: 768px) {
+  div.mat-container{
+    margin-top: -50px;
+    margin-left: -150px;
+    margin-right: -150px;
+    padding:100px 180px 60px 180px;
+    background-color:#025;
+  }
+}
+@media (max-width: 767px) {
+  div.mat-container{
+    margin-top: -50px;
+    margin-left: -150px;
+    margin-right: -150px;
+    padding:60px 150px 10px 150px;
+    background-color:#025;
+  }
+
+}
 
 div.metbox-row {
   margin: 0 0 0px 0;
@@ -8,33 +27,37 @@ div.metbox-row {
   overflow:hidden;
 }
 
-div.metbox-row  > b{
+div.metbox-row  > span{
   font-weight:normal;
   overflow:hidden;
 }
   
 
 @media (min-width: 768px) {
-  div.metbox-row-s1 > b{
-    height: 90px;
+  div.metbox-row  > span[class^="col-"]{
+    margin:0;
+    padding:0;
   }
-  div.metbox-row-s2 > b{
-    height: 190px;
+  div.metbox-row-s1 > span{
+    height: 100px;
   }
-  div.metbox-row-s3 > b{
-    height: 290px;
+  div.metbox-row-s2 > span{
+    height: 200px;
   }
-  div.metbox-row-s4 > b{
-    height: 390px;
+  div.metbox-row-s3 > span{
+    height: 300px;
   }
-  div.metbox-row-s5 > b{
-    height: 490px;
+  div.metbox-row-s4 > span{
+    height: 400px;
   }
-  div.metbox-row-s6 > b{
-    height: 590px;
+  div.metbox-row-s5 > span{
+    height: 500px;
   }
-  div.metbox-row-s7 > b{
-    height: 690px;
+  div.metbox-row-s6 > span{
+    height: 600px;
+  }
+  div.metbox-row-s7 > span{
+    height: 700px;
   }
 }
 @media (max-width: 767px) {
@@ -51,7 +74,11 @@ b.metbox {
   padding: 10px 25px 5px 25px;
   opacity: 0.75;
   background-color: #2e8bcc;
-  margin: 0 0 10px 0 ;
+  margin: 10px;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  border:solid 0px #338;
 }
 b.metbox:hover {
   opacity: 1;
@@ -95,8 +122,11 @@ b.metbox-black {
   background-color: #111111;
 }
 
-
-div.metbox-row > b h2 {
+div.metbox-row > span b img {
+  height: auto;
+  max-width: 100%;
+}
+div.metbox-row > span b h2 {
   font-size:1.5em;
   line-height:1.03em;
   padding:5px;
@@ -104,32 +134,32 @@ div.metbox-row > b h2 {
 }
 
 
-div.metbox-row > b , 
-div.metbox-row > b p {
+div.metbox-row > span b , 
+div.metbox-row > span b p {
   color: #eee;
   text-decoration: none;
   
 }
 
-div.metbox-row > b.metbox-white , 
-div.metbox-row > b.metbox-white p , 
-div.metbox-row > b.metbox-yellow , 
-div.metbox-row > b.metbox-yellow p {
+div.metbox-row > span b.metbox-white , 
+div.metbox-row > span b.metbox-white p , 
+div.metbox-row > span b.metbox-yellow , 
+div.metbox-row > span b.metbox-yellow p {
   color: #333;
 }
 
-div.metbox-row > b a ,
-div.metbox-row > b a:active {
+div.metbox-row > span b a ,
+div.metbox-row > span b a:active {
   color: #6f6;
   text-decoration: none;
 }
-div.metbox-row > b.metbox-white a, 
-div.metbox-row > b.metbox-white a:active, 
-div.metbox-row > b.metbox-yellow a, 
-div.metbox-row > b.metbox-yellow a:active {
+div.metbox-row > span b.metbox-white a, 
+div.metbox-row > span b.metbox-white a:active, 
+div.metbox-row > span b.metbox-yellow a, 
+div.metbox-row > span b.metbox-yellow a:active {
   color: #505;
 }
-div.metbox-row > b a:hover {
+div.metbox-row > span b a:hover {
   text-decoration: underline;
 }
 
