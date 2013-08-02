@@ -90,12 +90,18 @@ $(function(){
       laolin.wait.callback=[];
     }
   }
-  //加载js_name文件
+  //加载filename文件
   //callback_or_eventname若是：
   //1,函数：完成后调用之
   //2,未定义：
   //3,其他情况callback_or_eventname转成字符串（作为消息名），触发一条消息
-  laolin.wait.js=function(js_name,callback_or_eventname) {
+  laolin.wait.js=function(filename,callback_or_eventname) {
+    laolin.wait.file('js',filename,callback_or_eventname);
+  }
+  laolin.wait.css=function(filename,callback_or_eventname) {
+    laolin.wait.file('css',filename,callback_or_eventname);
+  }
+  laolin.wait.file=function(filetype,filename,callback_or_eventname) {
     if("function"==typeof(callback_or_eventname)){
       f=callback_or_eventname;
     } else if("undefined"==typeof(callback_or_eventname)){
@@ -103,9 +109,13 @@ $(function(){
     } else {
       f=function(){$(document).trigger(''+callback_or_eventname)};
     }
-    laolin.wait.begin('js:'+js_name,f);
-    laolin.fn.loadJs('',js_name).onload=function(){
-      laolin.wait.end('js:'+js_name);
+    laolin.wait.begin(filetype+filename,f);
+    loader=laolin.fn.loadJs;//默认js
+    if('css'==filetype) {
+      loader=laolin.fn.loadCss;//css
+    }
+    loader('',filename).onload=function(){
+      laolin.wait.end(filetype+filename);
     };
   }
   laolin.wait.isReady=function() {
