@@ -1,22 +1,25 @@
 var laolin={};
 $(function(){
   laolin.fn={};
+  laolin.wait={}
+  laolin.data={};//æ”¾ä¸€äº›å˜é‡çš„åœ°æ–¹
 
   /// laolin.fn
   /// =========
   laolin.fn.init=function() {
-    laolin.data={};//·ÅÒ»Ğ©±äÁ¿µÄµØ·½
+    laolin.wait.list={};
+    laolin.wait.callback=[];
     console.log('laolin.fn.init');
     return true;
   };
   
-  /// ÀûÓÃunderscoreµÄtemplate¹¦ÄÜ£¬°ÑdataÊı¾İÌ×ÓÃÄ£°åtpl£¬²¢·ÅÔÚ to ÖĞ
+  /// åˆ©ç”¨underscoreçš„templateåŠŸèƒ½ï¼ŒæŠŠdataæ•°æ®å¥—ç”¨æ¨¡æ¿tplï¼Œå¹¶æ”¾åœ¨ to ä¸­
   laolin.fn.template=function(to,tpl,data) {
     $(to).html( _.template($(tpl).html(),data));
   };
   
-  /// ajaxµ÷ÓÃurl·µ»ØµÄRESTfulÊı¾İ
-  /// ÀûÓÃunderscoreµÄtemplate¹¦ÄÜ£¬°Ñ Êı¾İÌ×ÓÃÄ£°åtpl£¬²¢·ÅÔÚ to ÖĞ
+  /// ajaxè°ƒç”¨urlè¿”å›çš„RESTfulæ•°æ®
+  /// åˆ©ç”¨underscoreçš„templateåŠŸèƒ½ï¼ŒæŠŠ æ•°æ®å¥—ç”¨æ¨¡æ¿tplï¼Œå¹¶æ”¾åœ¨ to ä¸­
   laolin.fn.templateRest=function(to,tpl,url) {
     console.log(1);
     $.getJSON(url,function(data){
@@ -26,8 +29,8 @@ $(function(){
   };
   
   
-  /// µ÷ÓÃÒ»¸öurl£¨Õâ¸öURL·µ»Øjs£©²¢Ö´ĞĞÖ®£¬ÓÃÓÚ¿çÓòajax
-  /// ²Î¿¼baidu×Ô¼º¸÷Õ¾µã¿çÓòajaxµÄ·½·¨µÄ
+  /// è°ƒç”¨ä¸€ä¸ªurlï¼ˆè¿™ä¸ªURLè¿”å›jsï¼‰å¹¶æ‰§è¡Œä¹‹ï¼Œç”¨äºè·¨åŸŸajax
+  /// å‚è€ƒbaiduè‡ªå·±å„ç«™ç‚¹è·¨åŸŸajaxçš„æ–¹æ³•çš„
   laolin.fn.loadJs=function (id,url){
      oScript = document.getElementById(id);
      var head = document.getElementsByTagName("head").item(0);
@@ -43,7 +46,7 @@ $(function(){
      return oScript;
   }
   
-  /// ¶¯Ì¬¼ÓÔØÒ»¸öcss
+  /// åŠ¨æ€åŠ è½½ä¸€ä¸ªcss
   laolin.fn.loadCss=function (id,url){
     var cssTag = document.getElementById(id);
     var head = document.getElementsByTagName('head').item(0);
@@ -58,10 +61,9 @@ $(function(){
     head.appendChild(css);
     return css;
   }
-  /// È¡µÃURLÖĞµÄ?ºóµÄ²ÎÊı
-  /// ²Î¿¼http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
-  laolin.fn.getParameterByName=function (name)
-  {
+  /// å–å¾—URLä¸­çš„?åçš„å‚æ•°
+  /// å‚è€ƒhttp://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
+  laolin.fn.getParameterByName=function (name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
     var regexS = "[\\?&]" + name + "=([^&#]*)";
     var regex = new RegExp(regexS);
@@ -72,6 +74,47 @@ $(function(){
       return decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   
+  laolin.wait.begin=function(a,callback) {
+    laolin.wait.list[a]=callback;
+  }
+  laolin.wait.end=function(a) {
+    callback=laolin.wait.list[a];
+    delete laolin.wait.list[a];
+    if(callback)callback();//æœ¬é¡¹å®Œæˆ
+    
+    //æ£€æŸ¥æ˜¯ä¸æ˜¯æ‰€æœ‰é¡¹ç›®éƒ½å®Œæˆäº†ï¼š
+    if(laolin.wait.isReady()) {
+      for(f in laolin.wait.callback) {
+        laolin.wait.callback[f]();
+      }
+      laolin.wait.callback=[];
+    }
+  }
+  //åŠ è½½js_nameæ–‡ä»¶
+  //callback_or_eventnameè‹¥æ˜¯ï¼š
+  //1,å‡½æ•°ï¼šå®Œæˆåè°ƒç”¨ä¹‹
+  //2,æœªå®šä¹‰ï¼š
+  //3,å…¶ä»–æƒ…å†µcallback_or_eventnameè½¬æˆå­—ç¬¦ä¸²ï¼ˆä½œä¸ºæ¶ˆæ¯åï¼‰ï¼Œè§¦å‘ä¸€æ¡æ¶ˆæ¯
+  laolin.wait.js=function(js_name,callback_or_eventname) {
+    if("function"==typeof(callback_or_eventname)){
+      f=callback_or_eventname;
+    } else if("undefined"==typeof(callback_or_eventname)){
+      f=undefined;
+    } else {
+      f=function(){$(document).trigger(''+callback_or_eventname)};
+    }
+    laolin.wait.begin('js:'+js_name,f);
+    laolin.fn.loadJs('',js_name).onload=function(){
+      laolin.wait.end('js:'+js_name);
+    };
+  }
+  laolin.wait.isReady=function() {
+    for(somethn in laolin.wait.list ){return false;}
+    return true;
+  }
+  laolin.wait.ready=function(callback) {
+    laolin.wait.callback.push(callback);
+  }
   
   /// ========
   laolin.fn.init();
