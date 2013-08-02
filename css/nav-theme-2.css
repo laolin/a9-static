@@ -18,6 +18,7 @@
 .bs-docs-nav .navbar-nav > li > a {
   color: #ddd;
 }
+
 .bs-docs-nav .navbar-nav > li > a:hover {
   color: #fff;
   border-bottom:4px solid #1ff;
@@ -36,7 +37,24 @@
   border-color: #463265;
 }
 /* side nav*/
-.sidebar-nav{
-  background-color: #ddd;
-  padding: 20px 5px;
+#main-box .sidebar-nav{
+  padding: 20px 0px;
+}
+.sidebar-nav .nav-pills > li {
+  padding:0;
+}
+.sidebar-nav .nav-pills > li  > a {
+  border-radius: 0;
+  padding:10px 10px;
+  background-color: #eee;
+  margin:2px;
+}
+.sidebar-nav .nav-pills > li  > a:hover{
+  color: #fff;
+  border-right:4px solid #1ff;
+  background-color: #6bd;
+}
+.sidebar-nav .nav-pills > li.active  > a {
+  border-right:4px solid #e00;
+  background-color: #428BCA
 }
