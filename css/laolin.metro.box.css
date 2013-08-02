@@ -58,6 +58,7 @@ div.metbox-row  > span{
 }
 b.metbox {
   display: block;
+  font-weight:normal;
   /*cursor: pointer;*/
   -webkit-perspective: 0;
   -webkit-transform-style: preserve-3d;

@@ -96,10 +96,21 @@ $(function(){
   //2,未定义：
   //3,其他情况callback_or_eventname转成字符串（作为消息名），触发一条消息
   laolin.wait.js=function(filename,callback_or_eventname) {
-    laolin.wait.file('js',filename,callback_or_eventname);
+    laolin.wait.files('js',filename,callback_or_eventname);
   }
   laolin.wait.css=function(filename,callback_or_eventname) {
-    laolin.wait.file('css',filename,callback_or_eventname);
+    laolin.wait.files('css',filename,callback_or_eventname);
+  }
+  laolin.wait.files=function(filetype,filenames,callback_or_eventname) {
+    if(Object.prototype.toString.call(filenames)==="[object Array]") {
+      a_list = Object.prototype.toString.call(callback_or_eventname)==="[object Array]"?
+          callback_or_eventname:undefined;
+      $.each(filenames,function(k,v){
+        laolin.wait.file(filetype, v, a_list?a_list[k]:callback_or_eventname);
+      });
+    } else {
+      laolin.wait.file(filetype,filenames,callback_or_eventname);
+    }
   }
   laolin.wait.file=function(filetype,filename,callback_or_eventname) {
     if("function"==typeof(callback_or_eventname)){
