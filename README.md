@@ -1,4 +1,4 @@
 a9-static
 =========
 
-as submodule 'static'
+a submodule of `laolin a9` (laolin/a9/`static/`)
