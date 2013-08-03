@@ -14,19 +14,25 @@
 }
 .bs-docs-nav .navbar-brand {
   color: #fff;
+  font-weight:900;
+}
+.bs-docs-nav a.navbar-brand:hover {
+  color: #e00;
+  background-color: #2e8bcc;
 }
 .bs-docs-nav .navbar-nav > li > a {
   color: #ddd;
 }
-
 .bs-docs-nav .navbar-nav > li > a:hover {
   color: #fff;
+  padding-bottom:11px;
   border-bottom:4px solid #1ff;
   background-color: #2e8bcc;
 }
 .bs-docs-nav .navbar-nav > .active > a,
 .bs-docs-nav .navbar-nav > .active > a:hover {
   color: #1ff;
+  padding-bottom:11px;
   border-bottom:4px solid #e00;
 }
 .bs-docs-nav .navbar-toggle {
