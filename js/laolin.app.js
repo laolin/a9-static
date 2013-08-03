@@ -1,3 +1,5 @@
+laolin=laolin||{};
+laolin.app={};
 $(function(){
       addr=window.location.search||'?a=lin&b=index';
       $('.navbar .nav a').click( function(){$(this).parent().addClass('active')}) .
