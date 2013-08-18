@@ -43,17 +43,17 @@ $(function(){
   function initMat() {
     mat_obj=$(".metbox");
     mat_obj.each(function (index) {
-      self=$(this);
+      self1=$(this);
       c_index=0;
-      color_names.forEach(function(colo,index) {//Array.some更适合，但是兼容性不好
-        if(self.hasClass("metbox-"+colo)) {
+      $.each(color_names,function(index,colo) {//IE8不能用forEach,some,...
+        if(self1.hasClass("metbox-"+colo)) {
           c_index=index;
           return false;
         }
       });
       mat_color_init[index]=c_index;
       mat_color_indexes[index]=c_index;
-      self.attr('mat_id',index);
+      self1.attr('mat_id',index);
     });
     $("body").bind("keyup", function(e) {
       switch(e.which) {
@@ -101,7 +101,7 @@ $(function(){
     $(mat_obj.get(i)).addClass("metbox-"+color_names[c]);
   }
   function setColors(cc) {
-    cc.forEach(function(colo,index){
+    $.each(cc,function(index,colo){
       setColor(index,colo);
     });
   };
