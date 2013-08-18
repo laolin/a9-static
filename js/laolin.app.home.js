@@ -1,5 +1,5 @@
 $(function(){
-   
+});  
   laolin.app.home={};
   laolin.app.home.data={};
   
@@ -108,4 +108,3 @@ $(function(){
   
   
   
-});
