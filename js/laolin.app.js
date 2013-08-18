@@ -1,9 +1,16 @@
-$(function(){
+ï»¿$(function(){
       addr=window.location.search;//||'?a=lin&b=index';
       $('.navbar .nav a').click( function(){$(this).parent().addClass('active')}) .
-        parent().removeClass('active');//È«±ä»Ò
-      $('.navbar .nav a[href="'+addr+'"]').parent().addClass('active');//Óëµ±Ç°URLÏà·ûµÄÁÁÏÔ
-      $('.sidebar-nav .nav a[href="'+addr+'"]').parent().addClass('active');//Óëµ±Ç°URLÏà·ûµÄÁÁÏÔ
+        parent().removeClass('active');//å…¨å˜ç°
+      $('.navbar .nav a[href="'+addr+'"]').parent().addClass('active');//ä¸å½“å‰URLç›¸ç¬¦çš„äº®æ˜¾
+      $('.sidebar-nav .nav a[href="'+addr+'"]').parent().addClass('active');//ä¸å½“å‰URLç›¸ç¬¦çš„äº®æ˜¾
 
   laolin.app=laolin.app||{};
+  
+  laolin.app.fn={};
+  laolin.app.fn.oldIE=function(){
+    laolin.wait.js(["static/js/forie/html5shiv.js",
+      "static/js/forie/respond.min.js"]);
+    alert('äº²ï¼Œæ‚¨çš„IEç‰ˆæœ¬è¿‡ä½ã€‚');
+  }  
 });
