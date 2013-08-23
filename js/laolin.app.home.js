@@ -1,5 +1,31 @@
-$(function(){
-});  
+(function(){
+  
+  cpage=$("#main-box >");
+  kid='pageid-'+Date.now();
+  cpage.attr('id',kid);
+  laolin.ui.ajaxPage.init("#main-box");
+  
+  //登记一下当前页：
+  laolin.ui.ajaxPage.pages[window.location.search]=kid;
+  laolin.ui.ajaxPage.current=window.location.search;
+  
+  loadPage=function(page){
+    laolin.ui.ajaxPage.loadingPage=page;
+    $('.nav li').removeClass('active');
+    $('.nav li a[href="'+page+'"]').parent().addClass('active');
+    laolin.ui.ajaxPage.load(page,"#main-box >");
+    return false;
+  };
+  
+  //1. logo处的点击改ajax
+  $('.navbar-brand').click(function(){ return loadPage(''); });
+  //2. 顶navbar处的点击改ajax
+  $('.navbar').on('click','.nav li a[href^="?a=lin&"]',function(){ return loadPage($(this).attr('href')); });
+  //3. side navbar处的点击改ajax
+  $(laolin.ui.ajaxPage.container).on('click','.nav li a[href^="?a=lin&"]',function(){ return loadPage($(this).attr('href')); });
+
+  
+})();  
   laolin.app.home={};
   laolin.app.home.data={};
   
