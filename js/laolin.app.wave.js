@@ -13,7 +13,7 @@ laolin.app.wave={};
   
   
   
-  loadPage=function(page){
+  laolin.app.wave.loadPage=function(page){
     laolin.ui.ajaxPage.loadingPage=page;
     $('.nav li').removeClass('active');
     $('.nav li a[href="'+page+'"]').parent().addClass('active');
@@ -22,9 +22,9 @@ laolin.app.wave={};
   };
   
   //1. logo处的点击改ajax
-  $('.navbar-brand').click(function(){ return loadPage('?c=wave'); });
+  $('.navbar-brand').click(function(){ return laolin.app.wave.loadPage('?c=wave'); });
   //2. 顶navbar处的点击改ajax
-  $('.navbar').on('click','.nav li a[href^="?c=wave&"]',function(){ return loadPage($(this).attr('href')); });
+  $('.navbar').on('click','.nav li a[href^="?c=wave&"]',function(){ return laolin.app.wave.loadPage($(this).attr('href')); });
 
   
 })();
