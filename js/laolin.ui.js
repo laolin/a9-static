@@ -34,7 +34,7 @@ $(function(){
       return decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   //
-  laolin.ui.ajaxPage.load=function(pageName, selector_load){
+  laolin.ui.ajaxPage.load=function(pageName, selector_load,callback){
     if(laolin.ui.ajaxPage.current==pageName)return;
     if(!laolin.ui.ajaxPage.pages[pageName]){
       
@@ -52,7 +52,7 @@ $(function(){
           );
           $("#"+tempcid).remove();
           laolin.ui.ajaxPage.pages[pageName]=cid;
-          laolin.ui.ajaxPage.load(pageName);
+          laolin.ui.ajaxPage.load(pageName,0,callback);
         }
       });
     }else{
@@ -60,6 +60,7 @@ $(function(){
       laolin.ui.ajaxPage.current=pageName;
       $(laolin.ui.ajaxPage.container+' >').hide({duration:500,queue:true});
       $('#'+laolin.ui.ajaxPage.pages[pageName]).show({duration:500,queue:true});
+      callback&&callback();
     }
   }       
   /**

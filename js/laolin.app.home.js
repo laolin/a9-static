@@ -11,9 +11,10 @@
   
   loadPage=function(page){
     laolin.ui.ajaxPage.loadingPage=page;
-    $('.nav li').removeClass('active');
-    $('.nav li a[href="'+page+'"]').parent().addClass('active');
-    laolin.ui.ajaxPage.load(page,"#main-box >");
+    laolin.ui.ajaxPage.load(page,"#main-box >",function(){
+      $('.nav li').removeClass('active');
+      $('.nav li a[href="'+page+'"]').parent().addClass('active');
+    });
     return false;
   };
   

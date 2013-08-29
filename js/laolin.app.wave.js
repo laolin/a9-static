@@ -15,9 +15,10 @@ laolin.app.wave={};
   
   laolin.app.wave.loadPage=function(page){
     laolin.ui.ajaxPage.loadingPage=page;
-    $('.nav li').removeClass('active');
-    $('.nav li a[href="'+page+'"]').parent().addClass('active');
-    laolin.ui.ajaxPage.load(page,"#pages article");
+    laolin.ui.ajaxPage.load(page,"#pages article",function(){
+      $('.nav li').removeClass('active');
+      $('.nav li a[href="'+page+'"]').parent().addClass('active');
+    });
     return false;
   };
   
