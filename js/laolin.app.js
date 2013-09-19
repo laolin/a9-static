@@ -19,3 +19,12 @@ laolin.app.fn.oldIE=function(){
     }
   });
 };
+
+laolin.app.fn.getInputValue=function(name,min,max,def){
+  vvv=+$('input[name='+name+']').attr('value');
+  if(vvv<min||vvv>max){
+    vvv=def;
+  }
+  $('input[name='+name+']').attr('value',vvv);
+  return vvv;
+}

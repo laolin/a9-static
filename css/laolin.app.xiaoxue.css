@@ -1,0 +1,41 @@
+.shuxue-box {
+  font-size:2em;
+  color:#3c0;
+  padding:5px;
+}
+  .shuxue-box input{
+    display:inline;
+    font-size:1em;
+    width:3em;
+    height:1.7em;
+  }
+  .shuxue-box button{
+    display:inline;
+    font-size:1em;
+  }
+  .shuxue-box .input-group-addon{
+    font-size:0.7em;
+  }
+.shuxue-box .working {
+  font-size:1.5em;
+  color:green;
+}
+  .shuxue-box .working input{
+    display:inline;
+    font-size:1em;
+    width:3em;
+    height:1.7em;
+  }
+  .shuxue-box .working button{
+    display:inline;
+    font-size:1em;
+  }
+#shuxue-done-list li{
+  cursor:pointer;
+}
+#shuxue-done-list li.active{
+  background-color:#428bca;
+}
+#shuxue-done-list li:hover{
+  background-color:#1ff;
+}
