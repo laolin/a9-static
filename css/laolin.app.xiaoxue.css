@@ -6,7 +6,7 @@
   .shuxue-box input{
     display:inline;
     font-size:1em;
-    width:3em;
+    width:3.5em;
     height:1.7em;
   }
   .shuxue-box button{
@@ -20,16 +20,20 @@
   font-size:1.5em;
   color:green;
 }
+  .shuxue-box .panel-heading{
+    font-size:0.6em;
+  }
   .shuxue-box .working input{
     display:inline;
     font-size:1em;
-    width:3em;
+    width:3.5em;
     height:1.7em;
   }
   .shuxue-box .working button{
     display:inline;
     font-size:1em;
   }
+  
 #shuxue-done-list li{
   cursor:pointer;
 }

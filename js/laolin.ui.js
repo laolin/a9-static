@@ -7,7 +7,10 @@ laolin.ui.ajaxPage.pages={};
 
    
 $(function(){
-
+  $(function(){
+    $('[data-toggle=tooltip]').tooltip();
+    $('[data-toggle=popover]').popover();
+  });
 });   
   
   //在页面内弹出一条消息，依赖 noty
