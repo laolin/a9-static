@@ -15,6 +15,10 @@
 .bs-docs-nav .navbar-brand {
   color: #fff;
   font-weight:900;
+  padding-left: 38px;
+  background-image: url("../img/laolin-logo-l-32.png");
+  background-repeat: no-repeat;
+  background-position:6px 9px; 
 }
 .bs-docs-nav a.navbar-brand:hover {
   color: #e00;
