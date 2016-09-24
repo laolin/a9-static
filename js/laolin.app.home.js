@@ -40,7 +40,7 @@
     d.mat_color_indexes=[];
     d.mat_color_init=[];
     d.mat_obj=[];
-    d.mat_color_can_edit=false;
+    d.mat_color_can_edit=true;
     
     initMat();
     cc=getColorsFromCookie();
