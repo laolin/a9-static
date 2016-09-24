@@ -1,6 +1,7 @@
 /* metro风格css，基于bootstrap，
  * Laolin 2003.6
  *****************************/
+ .incap_page-tooltip {display: none;} /* Remove ad. from incapsula, so sorry. */
 @media  (min-width: 992px){
 
 }
